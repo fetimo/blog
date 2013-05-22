@@ -1,0 +1,340 @@
+@charset "UTF-8";
+
+/*
+todo:
+
+on mobile, make a big home button on pull down, move links to right hand side
+make headings consistent
+make buttons consistent
+
+*/
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html,body,div,nav,section,h1,h2,h3,a,em,img,strong,ol,ul,li,fieldset,form,label{
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	vertical-align:baseline;
+	background:transparent
+}
+
+ol,ul {
+	list-style: none;
+}
+
+img{
+	max-width:100%;
+	-o-object-fit:contain;
+	object-fit:contain
+}
+
+a {
+	text-decoration:none;
+}
+
+input,textarea,button,label{
+	font-family:'helvetica light', arial, sans-serif;
+}
+
+input[type=submit],label,select,.pointer{cursor:pointer}
+
+body {
+	font-size: 100%;
+	color: #000;
+	font-family: 'Sorts Mill Goudy', serif;
+	-webkit-font-smoothing: subpixel-antialiased;
+	font-smooth: always;
+	text-rendering: optimizeLegibility;
+	line-height: 1.2;
+	background: rgba(234,233,244,0.3);
+}
+
+a{
+	color:#000;
+	text-decoration:underline;
+}
+
+a:hover{
+	opacity: 0.8;
+}
+
+a:active{
+	position:relative;
+	top:1px;
+}
+
+#container {
+	width:65%;
+	margin:0 auto;
+	position:relative;
+}
+
+nav{
+	line-height:1;
+	font-size:2em;
+}
+
+nav a{
+	color: #3F8AD4;
+	text-decoration:none;
+	font-family: 'Patua One', sans-serif;
+}
+
+article ul{
+	list-style:inside;
+}
+
+.accompanied article {
+	float: left;
+	width: 65%;
+	margin-right: 1em;
+}
+
+.accompanied article:last-of-type {
+	margin-bottom: 1em;
+}
+
+input,textarea{
+	width:60%;
+	border:1px solid rgba(0,0,0,0.5);
+	margin:5px 10px 5px 0;
+	padding:7px;
+	font-size:small;
+	line-height: 1.2;
+}
+
+pre {
+	white-space: pre-wrap;
+	border-radius: .2em;
+	background-color: #f1f1f1;
+	margin-left: 5em;
+	width: 80%;
+	padding: .5em;
+}
+
+input:focus,textarea:focus{
+	background:rgba(150,150,150,0.1);
+}
+
+footer{
+	//border-top: 1em solid #3F8AD4;
+	margin-top: 1em;
+	clear: both;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #3F8AD4;
+	font-family: 'Patua One', cursive;
+	font-weight: 400;
+}
+
+h2 a {
+	color: #3F8AD4;
+}
+
+.accompanied article em,
+.date {
+	font-size: 1em;
+}
+
+/* blog styles */
+
+section {
+	padding: 0 1em;
+}
+
+section p:not(.date), section ul {
+	font-family: 'Sorts Mill Goudy', serif;
+	font-size: 1em;
+	line-height: 1.5;
+}
+
+.date {
+	font-weight: 800;
+	margin: 0;
+	padding: 0
+}
+
+article  {
+	line-height: 1.5;
+	margin: 1em 0 0 0;
+}
+
+article li p, article li {
+	max-width: 100%;
+}
+
+aside {
+	width: 25%;
+	margin: 1em 0;
+	display: inline-block;
+}
+
+aside h3:not(:first-of-type) {
+	padding-top: 20px;
+}
+
+h3 {
+	padding: 0 0 0.5em 0;
+}
+
+h3:first-of-type {
+	margin: 0 0 0.5em 0;
+}
+
+.comment {
+	width: 70%;
+	line-height: 1.5;
+	border: 1px solid #000;
+	padding: 10px;
+	background: rgba(255,255,255,0.8);
+	margin: 1em 0;
+}
+
+textarea, input:not(:last-child) {
+	font-size: 0.8em;
+}
+
+em {
+	display: block;
+}
+
+article em {
+	display: inline;
+	color: #000 !important;
+}
+
+ol {
+	list-style: decimal inside;
+}
+
+.social {
+	background: #3F8AD4;
+	display: none;
+	height: 0;
+	overflow: hidden;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	position: relative;
+}
+
+.social.is-open {
+	display: block;
+}
+
+.social-inner {
+	width: 50%;
+	padding: 0 0.25em;
+}
+
+.social-inner h1 {
+	color: #000;
+	color: rgba(0,0,0,0.5);
+	margin-bottom: 0.25em;
+	font-size: 1.5em;
+}
+
+.social-inner a {
+	display: block;
+	line-height: 2;
+	color: #000;
+	font-size: 0.5em;
+}
+
+svg {
+	width: 1em;
+	height: 1em;
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-ms-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+
+.animated {
+	-webkit-transform: rotate(90deg) translate(-0.3em, 0);
+	-moz-transform: rotate(90deg) translate(-0.3em, 0);
+	-ms-transform: rotate(90deg) translate(-0.3em, 0);
+	-o-transform: rotate(90deg) translate(-0.3em, 0);
+	transform: rotate(90deg) translate(-0.3em, 0);
+}
+
+.button {
+	cursor: pointer;
+	margin: 0 1em;
+}
+
+.is-hidden {
+	display: none;
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+a svg {
+	height: 2em;
+	width: 2em;
+}
+
+@media only screen and (max-width: 60em) {
+	#container {
+		width: 100%;
+	}
+
+	textarea, input {
+		width: 100%;
+	}
+	
+	.button {
+		margin: 0 0.5em;
+	}
+	
+	.social-inner h1 {
+		font-size: 1em;
+	}
+}
+
+@media only screen and (max-width: 30em) {
+	aside,
+	.accompanied article {
+		float: none;
+		width: 100%;
+	}
+	
+	.button {
+		padding: 0.5em;
+		margin: 0 0 -0.5em;
+		-webkit-box-sizing: content-box;
+		-moz-box-sizing: content-box;
+		box-sizing: content-box;
+	}
+	
+	.button.animated {
+		margin: -0.5em 0 -0.5em;
+	}
+	
+	a svg {
+	    height: 4em;
+	    width: 4em;
+	}
+}
