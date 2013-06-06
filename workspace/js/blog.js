@@ -37,22 +37,22 @@
         };
     })();
 
-    var svg = document.getElementsByClassName('button')[0];
-    var social = document.getElementsByClassName('social')[0];
+    var svg = document.getElementsByClassName('button')[0],
+    	social = document.getElementsByClassName('social')[0];
 
     var open = function() {
         social.className += ' is-open';
         setTimeout(function() {
             social.style.height = document.getElementsByClassName('social-inner')[0].clientHeight + 16 + 'px';
         }, 50);
-        svg.className.baseVal = 'button animated';
+        svg.className = 'links button animated';
         svg.removeEventListener(utility.pointer, open, false);
         svg.addEventListener(utility.pointer, close, false);
     };
 
     var close = function() {
         var scroll = function() {
-            svg.className.baseVal = 'button';
+            svg.className = 'links button';
             social.style.height = 0;
             svg.addEventListener(utility.pointer, open, false);
             social.removeEventListener(utility.transition(), scroll, false);
@@ -64,5 +64,5 @@
     };
 
     svg.addEventListener(utility.pointer, open, false);
-        
+    
 })();

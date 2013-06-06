@@ -93,4 +93,83 @@
 			'section_articles_order' => 'desc',
 		),
 		########
+
+
+		###### SEARCH_INDEX ######
+		'search_index' => array(
+			're-index-per-page' => '20',
+			're-index-refresh-rate' => '0.5',
+			'get-param-prefix' => null,
+			'get-param-keywords' => 'keywords',
+			'get-param-per-page' => 'per-page',
+			'get-param-sort' => 'sort',
+			'get-param-direction' => 'direction',
+			'get-param-sections' => 'sections',
+			'get-param-page' => 'page',
+			'default-sections' => 'articles,comments',
+			'default-per-page' => '20',
+			'default-sort' => 'score',
+			'default-direction' => 'desc',
+			'excerpt-length' => '120',
+			'min-word-length' => '3',
+			'max-word-length' => '30',
+			'stem-words' => 'yes',
+			'build-entries' => 'no',
+			'mode' => 'like',
+			'log-keywords' => 'yes',
+			'indexes' => 'a:2:{i:1;a:3:{s:6:\"fields\";a:5:{i:0;s:5:\"title\";i:1;s:4:\"body\";i:2;s:10:\"categories\";i:3;s:4:\"date\";i:4;s:5:\"image\";}s:9:\"weighting\";s:1:\"1\";s:7:\"filters\";a:0:{}}i:2;a:3:{s:6:\"fields\";a:4:{i:0;s:4:\"name\";i:1;s:7:\"comment\";i:2;s:4:\"date\";i:3;s:12:\"commented-on\";}s:9:\"weighting\";s:1:\"2\";s:7:\"filters\";a:0:{}}}',
+		),
+		########
+
+
+		###### EMAIL ######
+		'email' => array(
+			'default_gateway' => 'sendmail',
+		),
+		########
+
+
+		###### EMAIL_SENDMAIL ######
+		'email_sendmail' => array(
+			'from_name' => null,
+			'from_address' => null,
+		),
+		########
+
+
+		###### EMAIL_SMTP ######
+		'email_smtp' => array(
+			'from_name' => null,
+			'from_address' => null,
+			'host' => '127.0.0.1',
+			'port' => '25',
+			'secure' => 'no',
+			'auth' => '0',
+			'username' => 'tim',
+			'password' => '5nAi1518!!@',
+		),
+		########
+
+
+		###### AKISMET ######
+		'akismet' => array(
+			'api-key' => '3fe0b2043d54',
+		),
+		########
+
+
+		###### CACHELITE ######
+		'cachelite' => array(
+			'lifetime' => '604800',
+			'show-comments' => 'no',
+			'backend-delegates' => 'yes',
+		),
+		########
+
+
+		###### MAINTENANCE_MODE ######
+		'maintenance_mode' => array(
+			'enabled' => 'no',
+		),
+		########
 	);

@@ -15,13 +15,17 @@ make buttons consistent
 	box-sizing: border-box;
 }
 
-html,body,div,nav,section,h1,h2,h3,a,em,img,strong,ol,ul,li,fieldset,form,label{
+html,body,div,nav,section,h1,h2,h3,a,em,img,strong,ol,ul,li,fieldset,form,label,main{
 	margin:0;
 	padding:0;
 	border:0;
 	outline:0;
 	vertical-align:baseline;
 	background:transparent
+}
+
+main, article, nav, section {
+	display: block;
 }
 
 ol,ul {
@@ -38,9 +42,9 @@ a {
 	text-decoration:none;
 }
 
-input,textarea,button,label{
+/*input,textarea,button,label{
 	font-family:'helvetica light', arial, sans-serif;
-}
+}*/
 
 input[type=submit],label,select,.pointer{cursor:pointer}
 
@@ -69,18 +73,22 @@ a:active{
 	top:1px;
 }
 
+aside a {
+	display: block;
+}
+
 #container {
 	width:65%;
 	margin:0 auto;
-	position:relative;
 }
 
-nav{
+.links,
+.social {
 	line-height:1;
 	font-size:2em;
 }
 
-nav a{
+.social a{
 	color: #3F8AD4;
 	text-decoration:none;
 	font-family: 'Patua One', sans-serif;
@@ -93,7 +101,7 @@ article ul{
 .accompanied article {
 	float: left;
 	width: 65%;
-	margin-right: 1em;
+	margin-right: 2em;
 }
 
 .accompanied article:last-of-type {
@@ -103,10 +111,11 @@ article ul{
 input,textarea{
 	width:60%;
 	border:1px solid rgba(0,0,0,0.5);
-	margin:5px 10px 5px 0;
+	margin:0.5em 1em 0.5em 0;
 	padding:7px;
 	font-size:small;
 	line-height: 1.2;
+	font-family: inherit;
 }
 
 pre {
@@ -119,11 +128,10 @@ pre {
 }
 
 input:focus,textarea:focus{
-	background:rgba(150,150,150,0.1);
+/*	background:rgba(150,150,150,0.1);*/
 }
 
-footer{
-	//border-top: 1em solid #3F8AD4;
+footer {
 	margin-top: 1em;
 	clear: both;
 }
@@ -145,10 +153,6 @@ h2 a {
 
 /* blog styles */
 
-section {
-	padding: 0 1em;
-}
-
 section p:not(.date), section ul {
 	font-family: 'Sorts Mill Goudy', serif;
 	font-size: 1em;
@@ -166,17 +170,13 @@ article  {
 	margin: 1em 0 0 0;
 }
 
-article li p, article li {
-	max-width: 100%;
-}
-
 aside {
 	width: 25%;
 	margin: 1em 0;
 	display: inline-block;
 }
 
-aside h3:not(:first-of-type) {
+aside h3:not(:first-child) {
 	padding-top: 20px;
 }
 
@@ -184,8 +184,28 @@ h3 {
 	padding: 0 0 0.5em 0;
 }
 
-h3:first-of-type {
+h3:first-child {
 	margin: 0 0 0.5em 0;
+}
+
+.search-form {
+	margin-top: 1em;
+}
+
+.search-form input[type="text"] {
+	-webkit-transition: width 0.3s ease-out;
+	-moz-transition: width 0.3s ease-out;
+	-ms-transition: width 0.3s ease-out;
+	-o-transition: width 0.3s ease-out;
+	transition: width 0.3s ease-out;
+}
+
+.search-form input[type="text"]:focus {
+	width: 100%;
+}
+
+.search-form h3 {
+	padding: 0;
 }
 
 .comment {
@@ -201,11 +221,31 @@ textarea, input:not(:last-child) {
 	font-size: 0.8em;
 }
 
+.search-results {
+	list-style: none;
+}
+
+.search-results p:before {
+	content: '\201c';
+}
+
+.search-results p:after {
+	content: '\201d';
+}
+
+.pagination a {
+	margin-right: 1em;
+}
+
+.search-results p {
+	width: 70%;
+}
+
 em {
 	display: block;
 }
 
-article em {
+.solo em {
 	display: inline;
 	color: #000 !important;
 }
@@ -221,8 +261,8 @@ ol {
 	overflow: hidden;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 	position: relative;
 }
@@ -233,10 +273,11 @@ ol {
 
 .social-inner {
 	width: 50%;
-	padding: 0 0.25em;
+	float: left;
+	padding: 0 1.25em;
 }
 
-.social-inner h1 {
+.social h1 {
 	color: #000;
 	color: rgba(0,0,0,0.5);
 	margin-bottom: 0.25em;
@@ -250,9 +291,22 @@ ol {
 	font-size: 0.5em;
 }
 
-svg {
-	width: 1em;
-	height: 1em;
+.about {
+	width: 30%;
+	float: left;
+}
+
+.about p {
+	font-size: 0.5em !important;
+}
+
+.about a {
+	color: #000;
+	color: rgba(0,0,0,0.5);
+}
+
+.home, .links {
+	/*height: 1em;*/
 	-webkit-transition: all 0.3s linear;
 	-moz-transition: all 0.3s linear;
 	-ms-transition: all 0.3s linear;
@@ -270,7 +324,12 @@ svg {
 
 .button {
 	cursor: pointer;
-	margin: 0 1em;
+	margin: 0.5em 1em 0;
+	width: 1.25em;
+}
+
+.button.animated {
+    margin-top: 0;
 }
 
 .is-hidden {
@@ -291,7 +350,7 @@ svg {
     *zoom: 1;
 }
 
-a svg {
+a .home {
 	height: 2em;
 	width: 2em;
 }
@@ -299,6 +358,7 @@ a svg {
 @media only screen and (max-width: 60em) {
 	#container {
 		width: 100%;
+		padding: 0 1em;
 	}
 
 	textarea, input {
@@ -314,7 +374,7 @@ a svg {
 	}
 }
 
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 30em) {	
 	aside,
 	.accompanied article {
 		float: none;
@@ -333,7 +393,7 @@ a svg {
 		margin: -0.5em 0 -0.5em;
 	}
 	
-	a svg {
+	a .home {
 	    height: 4em;
 	    width: 4em;
 	}

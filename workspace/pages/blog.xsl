@@ -124,12 +124,12 @@
 	</xsl:template>
 	
 	<xsl:template match="data" name="sidebar" mode="sidebar">
-		<!--<form action="/search/" method="get">
+		<form action="/search/" method="get">
 		    <label>Search:<br/><input type="text" name="keywords" /></label>
 		    <input type="hidden" name="sort" value="score-recency" />
 		    <input type="hidden" name="per-page" value="10" />
 		    <input type="hidden" name="sections" value="articles,comments,categories" />
-		</form>-->
+		</form>
 		<h3>Archives</h3>
 		<xsl:for-each select="archive-months/year">
 			<xsl:sort select="@value" data-type="number" order="descending"/>
